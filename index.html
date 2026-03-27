@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PACA SHOE Tu Mejor Opción</title>
+    
+    <!-- Enlace a los archivos externos styles.css -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav">
+            <div class="logo">PACA SHOE</div>
+            <div class="menu">
+                <a href="#" onclick="filterCategory('all')">Inicio</a>
+                <a href="#" onclick="filterCategory('hombre')">Hombre</a>
+                <a href="#" onclick="filterCategory('mujer')">Mujer</a>
+                <a href="#" onclick="filterCategory('niños')">Niños</a>
+                <a href="#" onclick="filterCategory('jovenes')">Jóvenes</a>
+            </div>
+            <div class="icons">
+                <span onclick="toggleWishlist()"></span>
+                <span onclick="toggleCart()">🛒 <span id="cart-count" class="cart-count">0</span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Encuentra tus próximos pasos</h1>
+            <p>Zapatos para hombres, mujeres, niños y jóvenes</p>
+            <button onclick="document.getElementById('shop-section').scrollIntoView({behavior:'smooth'})">Ver colección</button>
+        </div>
+    </section>
+
+    <section class="section" id="shop-section">
+        <h2>Nuestra Colección</h2>
+        
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterCategory('all')">Todos</button>
+            <button class="filter-btn" onclick="filterCategory('hombre')">Hombre</button>
+            <button class="filter-btn" onclick="filterCategory('mujer')">Mujer</button>
+            <button class="filter-btn" onclick="filterCategory('niños')">Niños</button>
+            <button class="filter-btn" onclick="filterCategory('jovenes')">Jóvenes</button>
+        </div>
+
+        <div class="products-grid" id="products-grid">
+            <!-- Los productos se generan con JavaScript -->
+        </div>
+    </section>
+
+    <!-- Modal de producto -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title"></h2>
+            </div>
+            <div class="modal-body">
+                <img id="modal-image" alt="">
+                <div class="modal-info">
+                    <p id="modal-price" class="modal-price"></p>
+                    <p id="modal-desc"></p>
+                    
+                    <div class="size-selector">
+                        <strong>Talla:</strong>
+                        <select id="size-select">
+                            <option>38</option><option>39</option><option>40</option>
+                            <option>41</option><option>42</option><option>43</option>
+                        </select>
+                    </div>
+
+                    <button onclick="addCurrentToCart()" class="add-to-cart-btn">
+                        Añadir al carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Carrito -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <h2>Tu Carrito</h2>
+        <div id="cart-items"></div>
+        
+        <div class="cart-total">
+            Total: $<span id="cart-total">0</span>
+        </div>
+        
+        <button onclick="checkout()" class="checkout-btn">Finalizar compra</button>
+        <button onclick="toggleCart()" class="close-cart-btn">Cerrar</button>
+    </div>
+
+    <div class="toast" id="toast">Producto añadido ✓</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+/* aqui se maneja el color del boton primariode  ver coleccion y los
+margenes dentro de toda la primera estructura asi tambien como el color
+del icono del carrito el nombre de la pagina y todos los botones de la pagina como
+los botones dentro de las casillas del producto, el precio del producto  */
+
+:root {
+    --primary: #eb2610;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background: #f8f9fa;
+    color: #333;
+}
+
+/* Header aqui se manipula el diseño, estilos y colores del encabezado principal es decir
+donde sale paca shoe, inicio, hombre, mujer, niños y jovenes */
+header {
+    background: rgb(248, 251, 249);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+/* aqui se cambia el color de letras de 
+ inicio, hombre, mujer, niños y jovenes y todo su contenido o ajustes que s e requiera */
+
+.menu a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+}
+
+.menu a:hover {
+    color: var(--primary);
+}
+
+.icons {
+    display: flex;
+    gap: 20px;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.cart-count {
+    background: var(--primary);
+    color: white;
+    font-size: 0.8rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: relative;
+    top: -8px;
+}
+
+/* Hero */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                url('https://source.unsplash.com/random/1600x900/?shoes') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgba(103, 4, 4, 0.998);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+}
+
+.hero-content button {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    background: var(--primary);
+    color: rgba(252, 253, 253, 0.896);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+/* Sección */
+.section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+}
+
+/* Filtros */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+/* Bordes y diseños de los botones de nuestra coleccion
+(hombres, mujer, niños y jovenes */
+.filter-btn {
+    padding: 10px 20px;
+    border: 2px solid #d1a5a56e;
+    background: rgba(255, 255, 255, 0.886);
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 500;
+}
+/* Colores  de letras  de los botones de [nuestra coleccion]
+(hombres, mujer, niños y jovenes */
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--primary);
+    color: rgb(186, 186, 188);
+    border-color: var(--primary);
+}
+
+/* aqui se maneja el tamaños, diseños y pixeles de nuestras casillas Productos
+(cuadros donde van el precio de zapatos, detalles y su imagen de producto-zapato */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 100px;
+}
+
+/* aqui se maneja los cambios de color de los sombreados de fondo de  las casillas de pruductos
+donde van los detalles del zapato y precio y añadir al carrito y tambien 
+los sombreados de las tarjetas o casillas */
+
+.product-card {
+    background: rgba(140, 3, 119, 0.336);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(3, 3, 134, 0.958);
+    transition: transform 0.3s;
+}
+/* aqui se maneja las interacciones de las casillas de productos
+es decir si queremos movimiento */
+
+.product-card:hover {
+    transform: translateY(-40px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.product-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+/* aqui seria el tamaño de los numeros de los precios de las casillas del producto */
+
+.price {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+/* aqui seria el color de las letras de todas las casillas de añadir al carrito
+sus margenes, bordes y el radio */
+
+.add-to-cart {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Modal seria el fondo de panatlla al momento de ir a la seccion de 
+ver detalles y todo sus ajuste dentro de su entorno  */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(12, 12, 12, 0.356);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+/* este seria el color de fondo del cuadro de ver detalles */
+
+.modal-content {
+    background: rgb(248, 250, 249);
+    max-width: 900px;
+    width: 90%;
+    border-radius: 15px;
+    overflow: hidden;
+}
+/* este seria la linea que parte el diseño de color de fondo de ver detalles es decir 
+la que separa y da estilo a la informacion */
+
+.modal-header {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #000000;
+}
+
+.close {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.modal-body {
+    display: flex;
+    padding: 20px;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+#modal-image {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.modal-info {
+    flex: 1;
+    min-width: 280px;
+}
+
+.modal-price {
+    font-size: 2rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Carrito aqui se puede hacer cambios en las secciones del carro
+y las iluminaciones de los bordes de la ventana */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100%;
+    background: rgba(243, 238, 238, 0.999);
+    box-shadow: -5px 0 15px rgb(214, 0, 0);
+    transition: right 0.4s;
+    z-index: 3000;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.cart-sidebar.open {
+    right: 0;
+}
+
+.cart-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #14e701;
+    padding-bottom: 15px;
+}
+
+.cart-total {
+    margin: 30px 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+/* aqui se maneja el diseño, bordes y colores del boton finalizar compra dentro de la ventana del carrito */
+
+.checkout-btn {
+    width: 100%;
+    padding: 15px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+/* aqui se maneja el borde. radio color y diseño del boton de cerrar dentro de carrito */
+
+.close-cart-btn {
+    width: 100%;
+    padding: 12px;
+    background: #e0d4d4;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Toast */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    display: none;
+    z-index: 4000;
+    box-shadow: 0 5px 15px rgba(222, 8, 8, 0.3);
+}
